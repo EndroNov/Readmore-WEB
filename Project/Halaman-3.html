@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadMore - Detail Buku</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <style>
+        .book-detail-container {
+            max-width: 800px;
+            margin: 90px auto 2rem;
+            padding: 30px;
+            background: #fff;
+            border-radius: 12px;
+
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .book-detail-image {
+            float: left;
+            margin-right: 30px;
+            margin-bottom: 5px;
+            justify-content: center;
+            display: flex;
+        }
+
+        .book-detail-image img {
+            width: 300px;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .book-detail-info h1 {
+            color: #11616c;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            margin-top: 0;
+        }
+
+        .book-meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .book-description {
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Add spacing between paragraphs in description */
+        .book-description p {
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .book-detail-container {
+                margin: 60px 1rem 1rem 1rem;
+                display: flex;
+                /* Back to flex col for mobile */
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .book-detail-image {
+                float: none;
+                margin-right: 0;
+            }
+
+            .book-detail-info h1 {
+                text-align: center;
+                font-size: 1.8em;
+            }
+
+            .book-meta {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="header-halaman">
+        <div class="container-halaman">
+            <a href="Library.html" class="img-kiri">
+                <img src="../Assets/project/icon/arrow.png" alt="Back">
+            </a>
+            <div class="middle-text">
+                <p id="header-title">Detail Buku</p>
+            </div>
+            <a href="index.html" class="img-kanan">
+                <img src="../Assets/project/icon/home.png" alt="Home">
+            </a>
+        </div>
+    </section>
+
+    <!-- Dynamic Content Container -->
+    <div id="book-content" class="book-detail-container" style="display: none;">
+        <div class="book-detail-image">
+            <img id="book-image" src="" alt="">
+        </div>
+        <div class="book-detail-info">
+            <h1 id="book-title">Judul Buku</h1>
+            <div class="book-meta">
+                <span id="book-author">Penulis</span> | <span id="book-category">Kategori</span>
+            </div>
+            <div class="book-description" id="book-description">
+                <!-- Description will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Fallback Content (Original Lorem Ipsum) - Hidden by default unless needed -->
+    <section class="paragraf" id="default-content">
+        <p>Silakan pilih buku dari halaman Library.</p>
+    </section>
+
+    <footer>
+        <img src="../Assets/project/Logo - design.png" alt="">
+        <p>Copyright &copy;2025</p>
+    </footer>
+
+    <script src="books.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const backButton = document.querySelector('.img-kiri');
+
+    if (backButton) {
+        backButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.history.back();
+            });
+        }
+    });
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookId = urlParams.get('id');
+
+            if (bookId) {
+                const book = BOOKS_DATA.find(b => b.id === bookId);
+
+                if (book) {
+                    // Start filling data
+                    document.getElementById('book-title').textContent = book.title;
+                    document.getElementById('header-title').textContent = book.title; // Update header
+                    document.getElementById('book-author').textContent = book.author;
+                    document.getElementById('book-category').textContent = book.category;
+                    const imgElement = document.getElementById('book-image');
+                    imgElement.src = book.image;
+                    imgElement.alt = book.title;
+
+                    // Use innerHTML to allow paragraph tags
+                    document.getElementById('book-description').innerHTML = book.description;
+
+                    // Show dynamic content, hide default
+                    document.getElementById('book-content').style.display = 'block'; // Block for float layout
+                    document.getElementById('default-content').style.display = 'none';
+
+                    document.title = `${book.title} - ReadMore`;
+
+                    // Handle back button navigation
+                    const fromPage = urlParams.get('from');
+                    const backButton = document.querySelector('.img-kiri'); // Select the back button anchor tag
+
+                    if (fromPage === 'home') {
+                        backButton.href = 'index.html';
+                    } else if (fromPage === 'explore') {
+                        backButton.href = 'Explore.html';
+                    } else {
+                        backButton.href = 'Library.html'; // Default back to Library
+                    }
+                } else {
+                    document.getElementById('default-content').innerHTML = '<p style="text-align:center; padding: 50px;">Buku tidak ditemukan.</p>';
+                }
+            } else {
+                // If no ID, show default Lorem Ipsum content
+                const defaultText = `
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Viverra adipiscing at in tellus integer feugiat scelerisque. Aliquet porttitor lacus luctus
+                    accumsan tortor posuere. Cursus metus aliquam eleifend mi in nulla posuere. Sit amet nisl purus in mollis
+                    nunc sed id semper risus. Id neque aliquam vestibulum morbi blandit cursus risus at ultrices. Massa
+                    ultricies mi quis hendrerit dolor magna eget est lorem. Sed risus pretium quam vulputate dignissim
+                    suspendisse in est ante in.<br><br>
+                    Et ligula ullamcorper malesuada proin libero nunc consequat interdum. Id donec ultrices tincidunt arcu non
+                    sodales neque sodales ut. Duis at consectetur lorem donec massa sapien faucibus et molestie. Elementum nisi
+                    quis eleifend quam adipiscing vitae proin sagittis nisl. Vitae suscipit tellus mauris a diam maecenas sed
+                    enim ut. Aliquam malesuada bibendum arcu vitae elementum. Platea dictumst vestibulum rhoncus est
+                    pellentesque elit ullamcorper dignissim cras. Ultricies integer quis auctor elit sed vulputate.</p>
+                `;
+                document.getElementById('default-content').innerHTML = defaultText;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
