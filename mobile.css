@@ -1,0 +1,599 @@
+/* MOBILE (max-width: 768px) */
+@media (max-width: 768px) {
+
+    header {
+        display: none !important;
+    }
+
+    .header-m {
+        display: flex !important;
+        justify-content: center;
+        position: static;
+    }
+
+    .header-m img {
+        width: auto;
+        height: 43px;
+    }
+
+    /* Adjust hero untuk mobile */
+    .hero {
+        margin-top: 0px;
+        padding: 10px 20px 60px;
+        height: 660px;
+    }
+
+    .hero-content h1 {
+        font-size: 45px;
+    }
+
+    .typing {
+        white-space: normal;
+        /* IZINKAN teks turun baris */
+        width: auto;
+        /* Hilangkan efek ketik kalau mau wrap */
+        border-right: none;
+        /* Hilangkan cursor jika perlu */
+        animation: typing;
+        /* Matikan efek typing di mobile */
+    }
+
+
+    @keyframes typing {
+        to {
+            width: 100%;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+    .search-container-m {
+        display: flex !important;
+        justify-content: center;
+        padding-left: 0px;
+        width: 280px;
+        margin: 0 auto;
+        position: relative;
+        /* Ensure dropdown positions relative to this */
+    }
+
+    .search-container-m input {
+        padding: 14px 17px;
+        border-radius: 10px;
+        border: none;
+        font-size: 11px;
+        width: 100%;
+        /* Fill the 280px container */
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .search-container {
+        display: none !important;
+    }
+
+    .hero-desc {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .bottom-nav {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding-right: 23px;
+        padding-bottom: env(safe-area-inset-bottom);
+        z-index: 999;
+        background: #fff;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid #ddd;
+        box-shadow: 2px -1px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .bottom-nav span {
+        font-size: 16px;
+    }
+
+    /* Adjust sections */
+    .new-uploaded {
+        padding: 30px 0px;
+    }
+
+    .new-uploaded h1 {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .new-uploaded p {
+        font-size: 12px;
+        margin: 0px 0px 20px;
+    }
+
+    /* Hide descriptions only in Library page sections with IDs */
+    section[id] .description {
+        display: none !important;
+    }
+
+    /* Style for Home page descriptions */
+    .new-uploaded .description {
+        text-align: center;
+        padding: 0 20px;
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+
+    .book-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin: 0px 8px 10px;
+    }
+
+    .book {
+        width: 110px;
+    }
+
+    .book img {
+        width: 110px;
+        height: 170px;
+    }
+
+    .book p {
+        font-size: 13px;
+        margin-top: 1px;
+        margin-bottom: 3px;
+    }
+
+    .overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0 !important;
+    }
+
+    .overlay img {
+        width: 35px;
+        height: auto !important;
+        margin-left: 0 !important;
+        padding-bottom: 5px;
+    }
+
+    .overlay span {
+        font-size: 14px;
+    }
+
+    .btn-library {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    /* Quote section dengan extra padding bottom */
+    .impact-section {
+        padding: 50px 25px 50px;
+        /* Extra padding bottom */
+    }
+
+    .quote-text {
+        font-size: 18px;
+    }
+
+    .quote-author {
+        font-size: 15px;
+    }
+
+    footer {
+        height: 220px;
+        padding-bottom: 80px;
+    }
+
+    footer img {
+        margin-top: 20px;
+        width: auto;
+        height: 80px;
+    }
+
+
+    /* ABOUT US */
+
+    .hero-about {
+        height: 40px;
+    }
+
+    .about {
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .about h1 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .divider {
+        width: 120px;
+        margin: 10px auto 1px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: justify;
+    }
+
+    .about-content p {
+        width: 100%;
+        font-size: 12px;
+        line-height: 1.7;
+        margin-left: 20px;
+        margin-top: 12px;
+    }
+
+    .about-logo {
+        display: none !important;
+    }
+
+    /* VISI MISI SECTION */
+    .visi_misi {
+        flex-direction: column;
+        gap: 25px;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .visi,
+    .misi {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+
+    .visi h1,
+    .misi h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .misi {
+        padding: 40px 60px;
+    }
+
+    .visi p,
+    .misi ul {
+        font-size: 13px;
+        line-height: 1.7;
+        margin-left: 0;
+    }
+
+    .visi .divider,
+    .misi .divider {
+        width: 120px;
+        margin: 10px auto 10px;
+    }
+
+
+
+
+    /* MEMBERS SECTION */
+    .members {
+        padding: 30px 20px;
+    }
+
+    .members h1 {
+        font-size: 32px;
+        margin-bottom: 0px;
+    }
+
+    .member-container {
+        gap: 20px;
+    }
+
+    .member-box {
+        width: 100%;
+        height: auto;
+        max-width: 150px;
+        margin: auto;
+        aspect-ratio: 3/6;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .member-box img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .member-name {
+        padding: 15px;
+    }
+
+    .member-name h3 {
+        font-size: 15px;
+        margin-bottom: 7px;
+    }
+
+    .member-name p {
+        font-size: 10px;
+        margin-bottom: 16px;
+    }
+
+
+    /* ***EXPLORE*** */
+    /* Buat card vertikal */
+
+    .hero-explore {
+        height: 20px;
+    }
+
+    .title h1 {
+        font-size: 26px;
+        margin-top: -17px;
+    }
+
+    .divider-Em {
+        display: flex !important;
+        width: 200px;
+        margin: 10px auto 0px;
+        border: 0;
+        border-top: 2px solid #ccc;
+    }
+
+    .divider-Lm {
+        display: block !important;
+        width: 120px;
+        margin: 10px auto 30px;
+        border: 0;
+        border-top: 1px solid #d1d1d1;
+        padding-bottom: 0;
+    }
+
+    .divider-De {
+        display: none !important;
+    }
+
+    .scroll-horizontal {
+        display: none !important;
+    }
+
+    .reco-scroll {
+        display: flex !important;
+        overflow-x: auto;
+        gap: 0px;
+        padding: 15px;
+        scroll-behavior: smooth;
+    }
+
+    .reco-scroll::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .reco-scroll::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    .reco-scroll::-webkit-scrollbar-thumb {
+        background: #0e676d;
+        border-radius: 10px;
+    }
+
+    .reco-card {
+        min-width: 300px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+        margin-left: 30px;
+    }
+
+    .reco-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .reco-image {
+        position: relative;
+        width: 100%;
+        height: 450px;
+    }
+
+    .reco-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .reco-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        text-align: center;
+        background: rgba(54, 54, 54, 0.6);
+        backdrop-filter: blur(8px);
+        justify-content: center;
+    }
+
+    .reco-info h1 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: white;
+    }
+
+    .reco-info p {
+        font-size: 12px;
+        color: #ddd;
+        margin: 0px 12px 12px;
+    }
+
+    .tag {
+        display: inline-block;
+        background: #0e676d;
+        color: white;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-left: 0;
+    }
+
+
+    /* ***LIBRARY*** */
+
+    .search-container-library-m {
+        width: 100%;
+        max-width: 320px;
+        margin: 20px auto -15px;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .search-container-library-m input {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 8px;
+        font-size: 10px;
+        background-color: #e6e6e6;
+    }
+
+    /* --- HEADER DESKTOP MENGHILANG --- */
+    .header-library {
+        display: none;
+    }
+
+    .header-m img {
+        width: 130px;
+        height: auto;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero-library {
+        width: 100%;
+        padding-top: 30px;
+        /* beri ruang di bawah header */
+        padding-bottom: 10px;
+        text-align: center;
+        height: auto;
+    }
+
+    .hero-content-library {
+        padding: 0 20px;
+        margin-top: 0;
+    }
+
+    .hero-content-library h1 {
+        font-size: 25px;
+        margin-bottom: -8px;
+        color: #111;
+    }
+
+    /* --- CATEGORY BUTTONS MOBILE --- */
+    .categories-library {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        padding: 0 10px;
+        margin-bottom: 25px;
+    }
+
+    .categories-library a {
+        width: 48%;
+        /* jadi 2 kolom */
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 8px;
+        background: #1a7a89;
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .impact-section-1 {
+        background-color: #11616c;
+        position: relative;
+        padding: 30px 15%;
+        overflow: hidden;
+        box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.2);
+        margin-bottom: 10px;
+        height: 10px;
+    }
+
+    .impact-section-2 {
+        background-color: #F29B30;
+        position: relative;
+        padding: 30px 15%;
+        overflow: hidden;
+        box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.2);
+    }
+
+
+    /* ***HALAMAN*** */
+
+    .header-halaman {
+        width: 100%;
+        padding-top: 0px;
+        justify-content: center;
+    }
+
+    .container-halaman {
+        background-color: #F29B30;
+        width: 90%;
+        height: 60px;
+        margin: 9px 0px 0px;
+        border-radius: 15px;
+        padding: 5px 20px 0px;
+        box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .container-halaman .img-kiri img {
+        width: 30px;
+    }
+
+    .container-halaman .img-kanan img {
+        width: 30px;
+    }
+
+    .middle-text p {
+        font-size: 16px;
+        font-family: inter;
+    }
+
+    .paragraf {
+        text-align: justify;
+        margin: 0px 25px 0px;
+        padding-top: 100px;
+        font-size: 12px;
+    }
+
+    .scroll-to-top {
+        bottom: 85px !important;
+    }
+
+    /* Header title for detail pages */
+    #header-title {
+        font-size: 14px !important;
+        line-height: 1.3;
+        padding: 0 5px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: center;
+    }
+
+}
